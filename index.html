@@ -3,42 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Cloud - High-Performance Infrastructure</title>
+    <title>Vertex Business - Professional Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --bg-deep: #0b0f19;
-            --bg-card: #131c2e;
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #7f00ff;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
+            --primary: #0284c7;
+            --secondary: #0ea5e9;
+            --accent: #38bdf8;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --text: #334155;
+            --white: #ffffff;
         }
 
         body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
+            background-color: var(--light);
+            color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         header {
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 1.2rem 0;
+            background: var(--white);
+            color: var(--dark);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .container {
@@ -56,32 +54,22 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-        }
-
-        .logo i {
-            font-size: 1.8rem;
-            -webkit-text-fill-color: var(--primary);
+            gap: 10px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
-            align-items: center;
+            gap: 2rem;
         }
 
         nav ul li a {
-            color: var(--text-muted);
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
@@ -90,108 +78,56 @@
         }
 
         .hero {
-            position: relative;
-            padding: 8rem 0 6rem;
-            background: radial-gradient(circle at 50% 20%, rgba(79, 172, 254, 0.15) 0%, transparent 60%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--white);
+            padding: 7rem 0;
             text-align: center;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            background: rgba(0, 242, 254, 0.1);
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
+            color: #94a3b8;
+            margin-bottom: 2rem;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0.9rem 2.2rem;
-            border-radius: 8px;
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
+            transition: background 0.3s ease;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #0b0f19;
-            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(0, 242, 254, 0.05);
+        .btn:hover {
+            background-color: var(--secondary);
         }
 
         section {
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
         }
 
         .features-grid {
@@ -201,146 +137,50 @@
         }
 
         .feature-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            background-color: var(--white);
             padding: 2.5rem 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(0, 242, 254, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 242, 254, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .feature-card i {
+            font-size: 2.5rem;
             color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .feature-card h3 {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .dashboard-preview {
-            background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-card) 100%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .metric-card {
-            background: rgba(19, 28, 46, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .metric-card h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
         }
 
         footer {
-            background-color: #070910;
-            border-top: 1px solid var(--border);
-            padding: 4rem 0 2rem;
-            color: var(--text-muted);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            color: var(--text-main);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-col p {
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .footer-links li a:hover {
-            color: var(--primary);
-        }
-
-        .copyright {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 0.95rem;
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-main);
-        }
-
-        @media (max-width: 992px) {
-            .features-grid, .metrics-grid, .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .features-grid, .metrics-grid, .footer-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
             nav ul {
@@ -349,14 +189,21 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: var(--bg-card);
+                background: var(--white);
                 flex-direction: column;
-                padding: 1.5rem 0;
+                padding: 1rem 0;
                 text-align: center;
-                border-bottom: 1px solid var(--border);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             }
-            nav ul.active { display: flex; }
-            .mobile-menu { display: block; }
+            nav ul.active {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
@@ -366,86 +213,53 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-cube"></i>
-                <span>NEXUS CLOUD</span>
+                <i class="fas fa-chart-line"></i>
+                <span>Vertex</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#performance">Performance</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem; color: #0b0f19;">Get Started</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Next-Gen Global Node Infrastructure
-            </div>
-            <h1>Scale Your Digital Edge with <span>High-Speed Nodes</span></h1>
-            <p>Deploy secure, ultra-low latency routing architecture designed for modern distributed applications and high-throughput AI workloads.</p>
-            <div class="btn-group">
-                <a href="#contact" class="btn btn-primary"><i class="fas fa-rocket"></i> Deploy Instance</a>
-                <a href="#features" class="btn btn-outline">Explore Architecture</a>
-            </div>
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Accelerate Your Growth</h1>
+            <p>We deliver modern digital solutions and strategic insights to take your business to the next level.</p>
+            <a href="#services" class="btn">Get Started</a>
         </div>
     </section>
 
-    <!-- Metrics Section -->
-    <section class="dashboard-preview">
-        <div class="container">
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <h3 class="counter" data-target="99.99">0</h3>
-                    <p>% Uptime SLA</p>
-                </div>
-                <div class="metric-card">
-                    <h3 class="counter" data-target="15">0</h3>
-                    <p>Global PoPs (ms)</p>
-                </div>
-                <div class="metric-card">
-                    <h3 class="counter" data-target="100">0</h3>
-                    <p>Gbps Backbone</p>
-                </div>
-                <div class="metric-card">
-                    <h3 class="counter" data-target="247">0</h3>
-                    <p>Live Monitoring</p>
-                </div>
-            </div>
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <div class="section-title">
+            <h2>Our Core Services</h2>
+            <p>Tailored strategies designed to maximize your efficiency and market reach.</p>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Architected for Extreme Performance</h2>
-                <p>Advanced tooling and robust backend network infrastructure to keep your traffic isolated, secure, and blazing fast.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Data-driven campaigns to boost your brand visibility and customer acquisition.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Zero-Trust Isolation</h3>
-                    <p>Containerized nodes operating in strict sandbox environments with encrypted tunneling protocols and robust anti-leak protection.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Dynamic Multi-Hop</h3>
-                    <p>Seamlessly chain multiple routing paths across global regions to bypass bottlenecks and secure data integrity.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>AI Workload Optimized</h3>
-                    <p>Engineered specifically for high-frequency model queries and data pipelines with minimal packet loss and jitter.</p>
-                </div>
+            <div class="feature-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Fast, responsive, and secure digital platforms built for modern enterprises.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Data Analytics</h3>
+                <p>Transform raw data into actionable intelligence for smarter decision making.</p>
             </div>
         </div>
     </section>
@@ -453,44 +267,7 @@
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <i class="fas fa-cube"></i>
-                        <span>NEXUS CLOUD</span>
-                    </div>
-                    <p>Empowering developers and enterprises with elite routing infrastructure and high-availability nodes worldwide.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Platform</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Edge Nodes</a></li>
-                        <li><a href="#">Routing Core</a></li>
-                        <li><a href="#">Security</a></li>
-                        <li><a href="#">Changelog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">Status</a></li>
-                        <li><a href="#">Support Center</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Compliance</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 Nexus Cloud Infrastructure. All rights reserved.</p>
-            </div>
+            <p>&copy; 2026 Vertex Business Solutions. All rights reserved.</p>
         </div>
     </footer>
 
@@ -499,28 +276,6 @@
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
-
-        // Simple Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const increment = target / 50;
-                const updateCounter = () => {
-                    count += increment;
-                    if(count < target) {
-                        counter.innerText = Number.isInteger(target) ? Math.ceil(count) : count.toFixed(2);
-                        setTimeout(updateCounter, 30);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCounter();
-            });
-        }
-
-        window.addEventListener('load', animateCounters);
     </script>
 </body>
 </html>
